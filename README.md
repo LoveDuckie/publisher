@@ -8,6 +8,10 @@ A command-line tool for posting your blogs to multiple platforms.
 
 ```publisher --action new-blog --title "This is a new blog!"```
 
+```publisher --action publish-blogs```
+
+```publisher --action publish-blogs --blog test-blog-id```
+
 ## Technologies
 
 * **C# and .NET 5.0**
