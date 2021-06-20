@@ -2,14 +2,24 @@
 
 A command-line tool for posting your blogs to multiple platforms.
 
+# Getting Started
+
+```publisher --action init-project```
+
+```publisher --action new-blog --title "This is a new blog!"```
+
+```publisher --action publish-blogs```
+
+```publisher --action publish-blog --blog test-blog-id```
+
 ## Technologies
 
-* C# and .NET 5.0
-* EntityFrameworkCore
-* SQLite
-* JSON
-* Markdown
-* SilverStripe
+* **C# and .NET 5.0**
+* **EntityFrameworkCore**
+* **SQLite**
+* **JSON**
+* **Markdown**
+* **SilverStripe**
 
 ## Goals
 * **GUI**
@@ -27,9 +37,10 @@ Below are a list of platforms that I intend on developing "publishers" for.
 * **Hashnode**
     * [Website](https://hashnode.com/)
 * **Dev.to**
-    * Website 
+    * [Website](https://dev.to/) 
 * **Hackernoon**
-    * Website
+    * **Note:** No API currently exists for HackerNoon. Support will be added once there is.
+    * [Website](https://hackernoon.com/)
 
 I will support as many platforms as possible providing there is a public-facing API available for them.
 
