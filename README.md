@@ -2,14 +2,20 @@
 
 A command-line tool for posting your blogs to multiple platforms.
 
+# Getting Started
+
+```publisher --action init-project```
+
+```publisher --action new-blog --title "This is a new blog!"```
+
 ## Technologies
 
-* C# and .NET 5.0
-* EntityFrameworkCore
-* SQLite
-* JSON
-* Markdown
-* SilverStripe
+* **C# and .NET 5.0**
+* **EntityFrameworkCore**
+* **SQLite**
+* **JSON**
+* **Markdown**
+* **SilverStripe**
 
 ## Goals
 * **GUI**
