@@ -12,6 +12,12 @@ A command-line tool for posting your blogs to multiple platforms.
 * SilverStripe
 
 ## Goals
+* **GUI**
+   * Enable for the same underlying framework to be used by a GUI instead of a CLI.  
+* **Extensible**
+   * Enable for this project to be extensible by third-party plugins
+* **Portable**
+   * Enable for this project to work on as many platforms that .NET supports 
 
 ## Targets
 Below are a list of platforms that I intend on developing "publishers" for.
