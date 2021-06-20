@@ -1,4 +1,5 @@
 ![Publisher Logo](https://github.com/LoveDuckie/publisher/blob/main/logos/png/publisher.png?raw=true)
+
 A command-line tool for posting your blogs to multiple platforms.
 
 ## Technologies
