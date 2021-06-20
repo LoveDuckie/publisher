@@ -50,4 +50,4 @@ TBD
 
 ## SilverStripe?
 
-I use SilverStripe as the CMS of choice for my personal website. Unfortunately it doesn't support Markdown out of the box, and therefore requires a bit of scaffolding code. This is why I have additionally created a "target publisher", along with supporting PHP code to enable for this. Use at your own risk!
+I use SilverStripe CMS for my website. Unfortunately there's no out-of-the-box features for remotely submitting blog entries with the `silverstripe/blog` module, so I created a simple build task that exposes this kind of functionality. I cannot guarantee that it implements best security practices, so tread carefully when using the addon (should you choose to).
