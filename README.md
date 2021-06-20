@@ -10,7 +10,7 @@ A command-line tool for posting your blogs to multiple platforms.
 
 ```publisher --action publish-blogs```
 
-```publisher --action publish-blogs --blog test-blog-id```
+```publisher --action publish-blog --blog test-blog-id```
 
 ## Technologies
 
