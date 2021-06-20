@@ -1,0 +1,20 @@
+{
+    "name": "publisher/publish-tasks",
+    "description": "A collection of build tasks used for publishing blog posts from the Publisher tool.",
+    "type": "library",
+    "require": {
+        "silverstripe/blog": "^3.7"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Publisher\\PublishTasks\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luc Shelton",
+            "email": "lucshelton@gmail.com"
+        }
+    ]
+}
