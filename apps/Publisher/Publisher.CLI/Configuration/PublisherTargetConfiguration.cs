@@ -8,14 +8,29 @@ namespace Publisher.CLI.Configuration
 {
     public class PublisherTargetConfiguration
     {
-        public string PublisherTargetType { get; set; }
+        private string publisherTargetType;
+        private Dictionary<string, string> properties;
+        #region Properties
+        /// <summary>
+        ///     
+        /// </summary>
+        public string PublisherTargetType { get => publisherTargetType; private set => publisherTargetType = value; }
 
-        public Dictionary<string, string> Properties { get; set; }
+        /// <summary>
+        ///     
+        /// </summary>
+        public Dictionary<string, string> Properties { get => properties; private set => properties = value; }
+        #endregion
 
+        #region Constructors
+        /// <summary>
+        ///     
+        /// </summary>
         public PublisherTargetConfiguration()
         {
             Properties = new Dictionary<string, string>();
             PublisherTargetType = string.Empty;
         }
+        #endregion
     }
 }

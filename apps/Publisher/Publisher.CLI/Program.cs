@@ -6,14 +6,7 @@ namespace Publisher.CLI
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             PublisherCLIFramework framework = new PublisherCLIFramework(args);
-            if (!framework.Execute())
-            {
-
-            }
-
-
         }
     }
 }

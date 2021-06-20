@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Publisher.CLI.Threading
+namespace Publisher.CLI.Configuration
 {
-    public enum PublisherOperationStates
-    {
-
-    }
-
-    public sealed class PublisherOperation
+    public class ImageUploaderConfiguration
     {
     }
 }

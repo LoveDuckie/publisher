@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Publisher.CLI.Threading
+namespace Publisher.CLI.Images.Compression
 {
-    public enum PublisherOperationStates
-    {
-
-    }
-
-    public sealed class PublisherOperation
+    /// <summary>
+    ///     
+    /// </summary>
+    public abstract class ImageCompressor
     {
     }
 }
