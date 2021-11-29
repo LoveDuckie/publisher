@@ -11,5 +11,8 @@ namespace Publisher.CLI.Images.Compression
     /// </summary>
     public abstract class ImageCompressor
     {
+
+        public abstract void OnCompress(string imageFilePath);
+    
     }
 }

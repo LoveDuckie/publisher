@@ -1,15 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Publisher.CLI.Configuration
 {
-    public class PublisherTargetConfiguration
+    public abstract class PublisherTargetConfiguration
     {
+        #region Fields
+        /// <summary>
+        /// 
+        /// </summary>
         private string publisherTargetType;
-        private Dictionary<string, string> properties;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private Dictionary<string, string> properties; 
+        #endregion
+
         #region Properties
         /// <summary>
         ///     

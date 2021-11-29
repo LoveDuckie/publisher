@@ -34,7 +34,7 @@ namespace Publisher.CLI.Publishers
                 throw new ArgumentNullException(nameof(context));
             }
 
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Publisher.CLI.Configuration
 {
-    public abstract class ImageUploaderConfiguration
+    public abstract class ImageCompressorConfiguration
     {
     }
 }

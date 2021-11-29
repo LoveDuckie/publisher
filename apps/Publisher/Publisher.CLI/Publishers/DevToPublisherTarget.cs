@@ -21,8 +21,8 @@ namespace Publisher.CLI.Publishers
         /// <summary>
         ///     
         /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        /// <param name="context">The context</param>
+        /// <returns>Returns the generated operation</returns>
         public PublisherOperation Publish(IPublisherContext context)
         {
             if (context is null)
@@ -30,7 +30,7 @@ namespace Publisher.CLI.Publishers
                 throw new ArgumentNullException(nameof(context));
             }
 
-            throw new System.NotImplementedException();
+            return null;
         } 
         #endregion
     }

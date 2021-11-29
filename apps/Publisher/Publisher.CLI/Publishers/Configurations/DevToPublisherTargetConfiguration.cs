@@ -1,15 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Publisher.CLI.Configuration;
+﻿using Publisher.CLI.Configuration;
 
 namespace Publisher.CLI.Publishers.Configurations
 {
+    /// <summary>
+    ///     
+    /// </summary>
     public sealed class DevToPublisherTargetConfiguration : PublisherTargetConfiguration
     {
-        public string ApiKey { get; set; }
+        #region Fields
+        /// <summary>
+        /// 
+        /// </summary>
+        private string apiKey;
+        #endregion
+
+        #region Properties
+        /// <summary>
+        ///     
+        /// </summary>
+        public string ApiKey { get => apiKey; set => apiKey = value; }
+        #endregion
 
         public DevToPublisherTargetConfiguration()
         {

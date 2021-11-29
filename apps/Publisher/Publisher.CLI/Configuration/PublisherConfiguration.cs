@@ -17,8 +17,7 @@ namespace Publisher.CLI.Configuration
         private const string DefaultPublisherConfigurationPathName = ".publisher";
 
         /// <summary>
-        ///     
-        /// 
+        ///     The immutable name for the folder containing blog content.
         /// </summary>
         private const string DefaultPublisherBlogsPathName = "blogs"; 
         #endregion
@@ -34,7 +33,7 @@ namespace Publisher.CLI.Configuration
         /// <summary>
         ///     
         /// </summary>
-        public string BlogsPath { get => blogsPath; set => blogsPath = value; }
+        public string BlogsPath { get => blogsPath ?? (blogsPath = GetDefaultBlogsPath()); set => blogsPath = value; }
         #endregion
 
         #region Constructors
@@ -53,22 +52,36 @@ namespace Publisher.CLI.Configuration
         public PublisherConfiguration(string blogsPath) : this()
         {
             BlogsPath = blogsPath ?? throw new ArgumentNullException(nameof(blogsPath));
-        } 
+        }
         #endregion
+
+        #region Static Helper Methods
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <returns></returns>
+        public static string GetDefaultBlogsPath()
+        {
+            return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "blogs");
+        }
 
         /// <summary>
         ///     
         /// </summary>
         /// <returns></returns>
-        private string GetDefaultBlogsPath()
-        {
-
-            return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "blogs");
-        }
-
-        private string GetDefaultPublisherConfigsPath()
+        public static string GetDefaultPublisherConfigsPath()
         {
             return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ".publisher");
         }
+
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <returns></returns>
+        public static string GetDefaultProjectPath()
+        {
+            return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        } 
+        #endregion
     }
 }

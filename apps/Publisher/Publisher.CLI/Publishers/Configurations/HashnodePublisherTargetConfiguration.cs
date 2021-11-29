@@ -1,24 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Publisher.CLI.Configuration;
+﻿using Publisher.CLI.Configuration;
 
 namespace Publisher.CLI.Publishers.Configurations
 {
+    /// <summary>
+    ///     
+    /// </summary>
     public sealed class HashnodePublisherTargetConfiguration : PublisherTargetConfiguration
     {
+        #region Fields
+        /// <summary>
+        /// 
+        /// </summary>
+        private string personalAccessToken; 
+        #endregion
+
         /// <summary>
         ///     The personal access token for authenticating with Hashnode
         /// </summary>
-        public string PersonalAccessToken { get; set; }
+        public string PersonalAccessToken { get => personalAccessToken; set => personalAccessToken = value; }
 
+        #region Constructors
         /// <summary>
         ///     
         /// </summary>
         public HashnodePublisherTargetConfiguration()
         {
-        }
+        } 
+        #endregion
     }
 }

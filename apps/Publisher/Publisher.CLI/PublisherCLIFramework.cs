@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using Publisher.CLI.Attributes;
 
 namespace Publisher.CLI
 {
@@ -31,31 +33,58 @@ namespace Publisher.CLI
         public List<string> ExtensionsPaths { get => extensionsPaths; set => extensionsPaths = value; }
 
         /// <summary>
-        ///     
+        ///     The action
         /// </summary>
         public string Action { get => action; set => action = value; }
 
         /// <summary>
+        ///     The absolute path to the configuration file.
+        /// </summary>
+        public string ConfigFilePath { get => configFilePath; set => configFilePath = value; }
+
+        /// <summary>
+        ///     The absolute path to the project we are working from
+        /// </summary>
+        public string ProjectPath { get; set; }
+        #endregion
+
+        /// <summary>
         ///     
         /// </summary>
-        public string ConfigFilePath { get => configFilePath; set => configFilePath = value; } 
-        #endregion
+        /// <returns></returns>
+        private string GetDefaultProjectPath()
+        {
+            return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),"project");
+        }
     }
 
-    public sealed class PublisherCLIFramework
+    /// <summary>
+    ///     
+    /// </summary>
+    public sealed partial class PublisherCLIFramework
     {
         #region Fields
         /// <summary>
         ///     
         /// </summary>
-        private string[] args; 
+        private string[] args;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private PublisherCLIFrameworkOptions options;
         #endregion
 
         #region Properties
         /// <summary>
         ///     
         /// </summary>
-        public string[] Args { get => args; private set => args = value; } 
+        public string[] Args { get => args; private set => args = value; }
+
+        /// <summary>
+        ///     
+        /// </summary>
+        public PublisherCLIFrameworkOptions Options { get => options; set => options = value; }
         #endregion
 
         #region Constructors
@@ -74,7 +103,7 @@ namespace Publisher.CLI
         public PublisherCLIFramework(string[] args) : this()
         {
             Args = args ?? throw new ArgumentNullException(nameof(args));
-        } 
+        }
         #endregion
 
         /// <summary>
@@ -89,6 +118,7 @@ namespace Publisher.CLI
         /// <summary>
         ///     
         /// </summary>
+        [PublisherFunction(Id = "init")]
         public void InitializeProject()
         {
         }
@@ -96,6 +126,7 @@ namespace Publisher.CLI
         /// <summary>
         ///     
         /// </summary>
+        [PublisherFunction(Id = "update-blogs")]
         public void UpdateBlogs()
         {
 
@@ -104,11 +135,43 @@ namespace Publisher.CLI
         /// <summary>
         ///     
         /// </summary>
+        [PublisherFunction(Id = "new-blog")]
         public void NewBlog()
         {
 
         }
 
+        /// <summary>
+        ///     
+        /// </summary>
+        [PublisherFunction(Id = "update-blog")]
+        public void UpdateBlog()
+        {
+
+        }
+
+        /// <summary>
+        ///     
+        /// </summary>
+        [PublisherFunction(Id = "delete-blog")]
+        public void DeleteBlog()
+        {
+            
+        }
+
+        /// <summary>
+        ///     
+        /// </summary>
+        [PublisherFunction(Id = "publish-blog")]
+        public void PublishBlog()
+        {
+            
+        }
+
+        /// <summary>
+        ///     Execute the framework
+        /// </summary>
+        /// <returns></returns>
         public bool Execute()
         {
             return false;

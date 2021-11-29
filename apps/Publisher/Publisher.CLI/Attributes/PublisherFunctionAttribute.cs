@@ -2,13 +2,17 @@
 
 namespace Publisher.CLI.Attributes
 {
-    public sealed class PublisherFunctionAttribute
+    /// <summary>
+    /// 
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
+    public sealed class PublisherFunctionAttribute : Attribute
     {
         #region Fields
         /// <summary>
         ///     
         /// </summary>
-        private string iD;
+        private string id;
         
         /// <summary>
         ///     
@@ -23,9 +27,9 @@ namespace Publisher.CLI.Attributes
 
         #region Properties
         /// <summary>
-        ///     
+        ///     The ID of the function. This will be automatically generated if only the name and description is provided.
         /// </summary>
-        public string ID { get => iD; set => iD = value; }
+        public string Id { get => id; set => id = value; }
 
         /// <summary>
         /// 
@@ -40,11 +44,11 @@ namespace Publisher.CLI.Attributes
 
         #region Constructors
         /// <summary>
-        ///     
+        ///     The base constructor
         /// </summary>
         public PublisherFunctionAttribute()
         {
-            ID = string.Empty;
+            Id = string.Empty;
             Name = string.Empty;
             Description = string.Empty;
         }
@@ -57,6 +61,7 @@ namespace Publisher.CLI.Attributes
         /// <param name="description"></param>
         public PublisherFunctionAttribute(string id, string name, string description) : this()
         {
+            Id = id ?? throw new ArgumentNullException(nameof(id));
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Description = description ?? throw new ArgumentNullException(nameof(description));
         }

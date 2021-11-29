@@ -1,14 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Publisher.CLI.Converters
 {
-    public class MarkdownToHtmlConverter
+    /// <summary>
+    ///     
+    /// </summary>
+    public sealed class MarkdownToHtmlConverter
     {
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="filePath">The absolute path to the file</param>
         public void LoadFromFilePath(string filePath)
         {
             if (string.IsNullOrEmpty(filePath))
@@ -16,8 +19,10 @@ namespace Publisher.CLI.Converters
 
             if (!File.Exists(filePath))
             {
-
+                throw new FileNotFoundException($"Failed: unable to find the file \"{filePath}\"", filePath);
             }
+
+            string loadedContents = File.ReadAllText(filePath);
         }
     }
 }
